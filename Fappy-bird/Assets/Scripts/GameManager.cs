@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject pipePrefeb;
+    [SerializeField] private float  pipetimerinterval;
+   private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator CallSpawner()
     {
+                
+        yield return new WaitForSeconds(pipetimerinterval);
+        Instantiate(pipePrefeb);
         
     }
 }
